@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,10 @@ Route::post('/users', [UserController::class,'store']);
 Route::get('/users/{id}', [UserController::class,'show']);
 Route::put('/users/{id}', [UserController::class,'update']);
 Route::delete('/users/{id}', [UserController::class,'destroy']);
+//Ticket routes
+Route::get('/tickets', [TicketController::class,'index']);
+Route::post('/tickets', [TicketController::class,'store']);
+Route::get('/tickets/{id}', [TicketController::class,'show']);
+Route::put('/tickets/{id}', [TicketController::class,'update']);
+Route::delete('/tickets/{id}', [TicketController::class,'destroy']);
 
