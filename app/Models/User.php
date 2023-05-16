@@ -43,8 +43,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function ticket():HasMany
+    public function tickets():HasMany
     {
         return $this->hasMany(Post::class);
+    }
+    
+    public function events():HasMany
+    {
+        return $this->hasMany(Event::class);
+    }
+    public function teams():HasMany
+    {
+        return $this->hasMany(Team::class);
     }
 }
